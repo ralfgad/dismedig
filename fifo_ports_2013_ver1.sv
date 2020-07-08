@@ -23,7 +23,7 @@ clocking px @(posedge clk);
   input #1ns      casi_vacio;
   input #1ns       rd_en; 
   input #1ns       wr_en;  
-endclocking:px;
+endclocking:px
 clocking tx @(posedge clk);
   input #2ns data_out;
   output #2ns data_in;
@@ -33,7 +33,7 @@ clocking tx @(posedge clk);
   input #2ns      casi_vacio;
   output #2ns       rd_en; 
   output #2ns       wr_en;  
-endclocking:tx;
+endclocking:tx
 
 
 

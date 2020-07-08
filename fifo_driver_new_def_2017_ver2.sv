@@ -18,7 +18,7 @@ class fifo_driver;
             bins f0w1r1={3'b011};
       
       }
-  endgroup;
+  endgroup
    covergroup COV_salidas;
 
       coverpoint  mports.px.data_out;
@@ -28,7 +28,7 @@ class fifo_driver;
             bins e1w1r1={3'b111}; 
             bins e0w1r1={3'b011}; 
           }
-  endgroup; 
+  endgroup
 // covergroup prueba_interno @(negedge mports.px);
 //      interno_r:coverpoint fifo_tb.duv.fifo_duv.COUNTRD;
 //      interno_w:coverpoint  fifo_tb.duv.fifo_duv.COUNTWR;
@@ -40,7 +40,7 @@ class fifo_driver;
 //    }
 //      cross interno_r,interno_w;  
 //  endgroup;
-  covergroup prueba_puntero @(negedge mports.px);
+  covergroup prueba_puntero @(mports.px);
       rw:coverpoint {mports.px.wr_en,mports.px.rd_en}
 	{  	bins simultaneo_rw = {2'b11} ;
                 bins otros=default;}
@@ -54,7 +54,7 @@ class fifo_driver;
   	{  	bins         cross1 = binsof(rw.simultaneo_rw)&&binsof(interno_dif.lleno);  
 		bins         cross2 = binsof(rw.simultaneo_rw)&&binsof(interno_dif.vacio);              
     	}
-  endgroup; 
+  endgroup
     function new (virtual fifo_if.test ports, virtual fifo_if.monitor mports);
   begin
     this.ports = ports;
@@ -96,11 +96,11 @@ class fifo_driver;
     bit [7:0] data = 0;
 	  @ (mports.px); 
     while (1) begin
-      //@ (mports.px); //eliminado porque es lectura síncrona
+      //@ (mports.px); //eliminado porque es lectura sï¿½ncrona
       if (  mports.px.rd_en== 1 && mports.px.vacio!=0 ||  mports.px.rd_en== 1 && mports.px.vacio==0 && mports.px.wr_en==1) begin
         COV_salidas.sample(); 
         @ (mports.px) ;
-        data = mports.px.data_out;//añadido porque es lectura síncrona
+        data = mports.px.data_out;//aadido porque es lectura sincrona
 //anyadido para cobertura
         $write("%dns : Read posting to scoreboard data = %x\n",$time, data);
         sb.compareItem(data);
