@@ -28,18 +28,18 @@ xmvlog -work work_lib -cdslib ./cds.lib -logfile xmvlog_presyn.log \
 
 xmvlog -work work_sub -cdslib ./cds.lib -append_log -sv \
     -logfile xmvlog_presyn.log -errormax 15 -update -linedebug \
-    -status ../src/dismedig/fifo_un_fichero.sv ../src/dismedig/fifo_ports_2013_ver1.sv ../src/dismedig/fifo_top_duv_2013_ver1.sv 
+    -status ../src/dismedig/fifo_un_fichero.sv ../src/dismedig/fifo_ports_2020_ver1.sv ../src/dismedig/fifo_top_duv_2020_ver1.sv 
 
 xmvlog -work work -cdslib ./cds.lib -append_log -sv \
     -logfile xmvlog_presyn.log -errormax 15 -update -linedebug \
-    -define presyn -status ../src/dismedig/fifo_top_test_2014_ver2.sv   ../src/dismedig/fifo_tb_2013_ver1.sv
+    -define presyn -status ../src/dismedig/fifo_top_test_2020_ver2.sv   ../src/dismedig/fifo_tb_2020_ver1.sv
 
 
 xmelab -work work -cdslib ./cds.lib -timescale '1ns/10ps' \
     -logfile xmelab_presyn.log -errormax 30 -access +wc \
     -nowarn CUVWSP -COV_CGSAMPLE -COVERAGE U -nowarn SDFNCAP -status work.fifo_tb
 
-xmsim -GUI -cdslib ./cds.lib \
+xmsim -GUI -ASSERT_COUNT_TRACES -cdslib ./cds.lib \
     -logfile xmsim_presyn.log -errormax 15 -status work.fifo_tb:module \
     # -input ../tcl/xcelium_gen_vcd_presyn.tcl
 
