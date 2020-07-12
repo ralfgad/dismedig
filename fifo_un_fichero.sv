@@ -8,8 +8,7 @@
 // using Mentor Graphics HDL Designer(TM) 2019.4 (Build 4)
 //
 
-`resetall
-`timescale 1ns/10ps
+
 module fifo_un_fichero 
   
 #(parameter LENGTH=32,
@@ -24,21 +23,26 @@ input RESET_N,
 output [$clog2(LENGTH-1)-1:0] USE_DW,
 output logic F_FULL_N,
 output logic F_EMPTY_N,
-output logic F_LAST_N,
-output logic F_FIRST_N,
-output logic [SIZE-1:0] DATA_OUT
+output logic [SIZE-1:0] DATA_OUT,
 
+input logic scan_in,
+input logic scan_enable,
+input logic test_mode,
+output logic scan_out
 
 );
 localparam tamano=$clog2(LENGTH-1);
 logic [0:LENGTH-1][SIZE-1:0] aux;
 logic [tamano-1:0] count ;
 assign USE_DW=count;
+logic tsCLOCK;
+logic tsRESET_N;
 enum logic [1:0] {vacio,otros,lleno} estado;
 
-
-always_ff @(posedge CLOCK or negedge RESET_N)
-if (!RESET_N)
+STEJIHDX1 sm_trig1 (.A(CLOCK), .Q(tsCLOCK));
+STEJIHDX1 sm_trig2 (.A(RESET_N), .Q(tsRESET_N));
+always_ff @(posedge tsCLOCK or negedge tsRESET_N)
+if (!tsRESET_N)
       begin
         aux<={LENGTH{'0}};
         count<=0;
@@ -119,8 +123,7 @@ else
 
 assign F_FULL_N=(estado==lleno)?1'b0:1'b1;
 assign F_EMPTY_N=(estado==vacio)?1'b0:1'b1;
-assign F_LAST_N=(count==LENGTH-1)?1'b0:1'b1;
-assign F_FIRST_N=(count==1)?1'b0:1'b1;
+
 
 // ### Please start your Verilog code here ### 
 

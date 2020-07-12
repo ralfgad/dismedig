@@ -28,7 +28,7 @@ xmvlog -work work_lib -cdslib ./cds.lib -logfile xmvlog_presyn.log \
 
 xmvlog -work work_sub -cdslib ./cds.lib -append_log -sv \
     -logfile xmvlog_presyn.log -errormax 15 -update -linedebug \
-    -status ../src/dismedig/fifo_un_fichero.sv ../src/dismedig/fifo_ports_2020_ver1.sv ../src/dismedig/fifo_top_duv_2020_ver1.sv 
+    -status ../src/dismedig/fifo_un_fichero.sv  ../src/dismedig/fifo_ports_2020_ver1.sv ../src/dismedig/PS_Demo.v  ../src/dismedig/fifo_top_duv_2020_ver2.sv 
 
 xmvlog -work work -cdslib ./cds.lib -append_log -sv \
     -logfile xmvlog_presyn.log -errormax 15 -update -linedebug \
