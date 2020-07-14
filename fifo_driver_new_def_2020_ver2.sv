@@ -115,6 +115,7 @@ class fifo_driver;
   bit rdDone;
   bit wrDone;
 
+  localparam antirecover=5; 
   integer wr_cmds;
   integer rd_cmds;
   covergroup COV_entradas;
@@ -429,6 +430,7 @@ begin
     wrDone = 0;
     sb.vaciar();
     repeat (5) @ (ports.tx);
+    # antirecover;
     ports.rst= 1'b1;
     $write("%dns : Done asserting reset\n",$time);
   end
