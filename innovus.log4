@@ -1,0 +1,67 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2018 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v18.10-p002_1, built Tue May 29 19:19:55 PDT 2018
+Options:	
+Date:		Wed Jul 15 19:44:19 2020
+Host:		VMCENTOS7 (x86_64 w/Linux 3.10.0-1127.10.1.el7.x86_64) (1core*4cpus*Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz 20480KB)
+OS:		CentOS Linux release 7.8.2003 (Core)
+
+License:
+		invs	Innovus Implementation System	18.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+couldn't read file "../src/dismedig/tcl/PS_Demo_PuR0.tcl": no such file or directory
+<CMD> setOaxMode -compressLevel 0
+<CMD> setOaxMode -allowBitConnection true
+<CMD> setOaxMode -allowTechUpdate false
+<CMD> setOaxMode -updateMode true
+<CMD> setOaxMode -pinPurpose true
+<CMD> setDesignMode -process 180
+Applying the recommended capacitance filtering threshold values for 180nm process node: total_c_th=5, relative_c_th=0.03 and coupling_c_th=3.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	For postRoute effortLevel low extraction, the coupling_c_th value will be used only when the -capFilterMode parameter of the setExtractRCMode command is set to relAndCoup or relOrCoup. Default value of -capFilterMode parameter in postRoute extraction effortLevel low is relOnly.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'standard'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'low'.
+Updating process node dependent CCOpt properties for the 180nm process node.
+<CMD> setViaGenMode -symmetrical_via_only true
+<CMD> set_table_style -no_frame_fix_width
+<CMD> set_global timing_report_enable_auto_column_width true
+<CMD> setMultiCpuUsage -localCpu 4
+<CMD> set init_oa_design_lib PS_Demo
+<CMD> set init_top_cell PS_Demo
+<CMD> set init_oa_ref_lib {D_CELLS_JIHD IO_CELLS_F3V XSPRAMLP_128X16P}
+<CMD> set init_verilog ../genus/results/PS_Demo.v
+<CMD> set init_mmmc_file ../tcl/PS_Demo_mmmc.tcl
+<CMD> set init_pwr_net {VDD VDDOR vdd_A vdd_R}
+<CMD> set init_gnd_net GND
+<CMD> set init_abstract_view abstract
+<CMD> set init_layout_view layout
+<CMD> init_design
+**ERROR: (IMPSYT-6284):	Failed to open file ../tcl/PS_Demo_mmmc.tcl for read.
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+Reading tech data from OA library 'D_CELLS_JIHD' ...
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+**ERROR: (IMPOAX-503):	Cannot open OA library 'D_CELLS_JIHD'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+Type 'man IMPOAX-503' for more detail.
+**ERROR: (IMPSYT-16006):	Fail to read LEF information from OA reference libraries. Check the OA database provided and your inputs.
+
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Wed Jul 15 19:49:23 2020
+  Total CPU time:     0:00:35
+  Total real time:    0:05:05
+  Peak memory (main): 450.67MB
+
+
+*** Memory Usage v#1 (Current mem = 572.906M, initial mem = 251.484M) ***
+*** Message Summary: 2 warning(s), 5 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:34.0, real=0:05:04, mem=572.9M) ---

@@ -6,7 +6,7 @@ set cellName "PS_Demo"
 set refLibs [list D_CELLS_JIHD IO_CELLS_F3V XSPRAMLP_128X16P]
 set verilogFile "../genus/results/${cellName}.v"
 set scanDef "../genus/results/${cellName}.scan.def"
-set ioFile "../src/${cellName}.io"
+set ioFile "../src/dismedig/${cellName}.io"
 set mmmcFile "../tcl/${cellName}_mmmc.tcl"
 set powerNets [list VDD VDDOR vdd_A vdd_R]
 set groundNets [list GND]
@@ -65,15 +65,15 @@ loadIoFile $ioFile
 addIoFiller -cell FILLER100F FILLER84F FILLER50F FILLER40F FILLER20F FILLER10F FILLER05F FILLER02F FILLER01F -prefix IOFILLER
 
 # ----------------------------------------------------------
-# Placement of IPs
+# Placement of IPs, comentado porque no hay ram ahora
 # ----------------------------------------------------------
-create_relative_floorplan -place core/RAM \
-                          -ref_type core_boundary \
-                          -orient R0 \
-                          -horizontal_edge_separate {1 0.0 1} \
-                          -vertical_edge_separate {0 0.0 0}
+# create_relative_floorplan -place core/RAM \
+#                          -ref_type core_boundary \
+#                          -orient R0 \
+#                          -horizontal_edge_separate {1 0.0 1} \
+#                          -vertical_edge_separate {0 0.0 0}
 
-addHaloToBlock 0 40 9 0 core/RAM
+# restartaddHaloToBlock 0 40 9 0 core/RAM
 
 # ----------------------------------------------------------
 # Global P/G net connections
@@ -267,7 +267,7 @@ verify_drc -report verifyDrc.rpt
 verifyProcessAntenna -report verifyProcessAnt.rpt
 
 # ----------------------------------------------------------
-# Cleanup
+# Cleanup, tambien comentado por no tener RAM
 # ----------------------------------------------------------
 deleteHaloFromBlock core/RAM
 
@@ -299,4 +299,4 @@ setDelayCalMode -reset
 saveDesign -cellview [list $libName $cellName layout_06_signoff] -rc
 
 
-exit
+# exit

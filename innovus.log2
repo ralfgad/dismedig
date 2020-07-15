@@ -1,0 +1,213 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2018 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v18.10-p002_1, built Tue May 29 19:19:55 PDT 2018
+Options:	
+Date:		Wed Jul 15 11:46:43 2020
+Host:		VMCENTOS7 (x86_64 w/Linux 3.10.0-1127.10.1.el7.x86_64) (1core*4cpus*Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz 20480KB)
+OS:		CentOS Linux release 7.8.2003 (Core)
+
+License:
+		invs	Innovus Implementation System	18.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+<CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+<CMD> set defHierChar /
+<CMD> set distributed_client_message_echo 1
+<CMD> set distributed_mmmc_disable_reports_auto_redirection 0
+<CMD> set enc_enable_print_mode_command_reset_options 1
+<CMD> set init_abstract_view abstract
+<CMD> set init_design_netlisttype OA
+<CMD> set init_design_settop 0
+<CMD> set init_gnd_net GND
+<CMD> set init_io_file PS_Demo.io
+<CMD> set init_layout_view layout
+<CMD> set init_mmmc_file tcl/PS_Demo_mmmc.tcl
+<CMD> set init_oa_design_cell PS_Demo
+<CMD> set init_oa_design_lib PS_Demo
+<CMD> set init_oa_ref_lib {list D_CELLS_JIHD IO_CELLS_F3V}
+<CMD> set init_oa_search_lib {}
+<CMD> set init_original_verilog_files ../../genus/results/PS_Demo.v
+<CMD> set init_pwr_net {VDD VDDOR vdd_A vdd_R}
+<CMD> set init_verilog ../../genus/results/PS_Demo.v
+<CMD> set latch_time_borrow_mode max_borrow
+<CMD> set pegDefaultResScaleFactor 1
+<CMD> set pegDetailResScaleFactor 1
+<CMD> set report_inactive_arcs_format {from to when arc_type sense reason}
+<CMD> set soft_stack_size_limit 31
+**WARN: (IMPUDM-33):	Global variable "timing_enable_default_delay_arc" is obsolete and will be removed in a future release. The obsolete variable still works in this release, but to avoid this warning and to ensure compatibility with future releases, remove the obsolete variable from your script.
+<CMD> suppressMessage -silent GLOBAL-100
+<CMD> unsuppressMessage -silent GLOBAL-100
+**WARN: (IMPUDM-33):	Global variable "timing_enable_default_delay_arc" is obsolete and will be removed in a future release. The obsolete variable still works in this release, but to avoid this warning and to ensure compatibility with future releases, remove the obsolete variable from your script.
+<CMD> suppressMessage -silent GLOBAL-100
+<CMD> unsuppressMessage -silent GLOBAL-100
+<CMD> set timing_enable_default_delay_arc 1
+<CMD> set upf_hier_pg_port_support 0
+<CMD> set upf_hier_pg_port_support 0
+<CMD> init_design
+#% Begin Load MMMC data ... (date=07/15 11:47:35, mem=437.0M)
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/IO_CELLS_F3V_LPMOS_slow_1_62V_3_00V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/D_CELLS_JIHD_LPMOS_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/XSPRAMLP_128X16P_CPF_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../celticDB/IO_CELLS_F3V/IO_CELLS_F3V_LPMOS_slow_1_62V_3_00V_125C.cdB' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../celticDB/D_CELLS_JIHD/D_CELLS_JIHD_LPMOS_slow_1_62V_125C.cdB' for library set
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:48:22, mem=437.1M)
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/XSPRAMLP_128X16P_CPF_slow_1_62V_125C.lib.gz' for library set
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:49:07, mem=437.1M)
+% End Load MMMC data ... (date=07/15 11:49:07, total cpu=0:00:00.0, real=0:00:00.0, peak res=437.2M, current mem=437.2M)
+rc_cBest rc_cWorst
+**ERROR: **ERROR: (IMPIMEX-3):	There is no verilog netlist found in init_verilog. The variable is either not specified or specified incorrectly. Check the location of Verilog file in the global file.
+
+<CMD> set init_design_netlisttype Verilog
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:49:30, mem=438.3M)
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+The existing analysis_view 'av_wc' has been replaced with new attributes.
+The existing analysis_view 'av_bc' has been replaced with new attributes.
+The existing analysis_view 'av_ecsm' has been replaced with new attributes.
+INFO: New setup and hold views overwrite old settings during design initialization
+% End Load MMMC data ... (date=07/15 11:49:30, total cpu=0:00:00.0, real=0:00:00.0, peak res=438.5M, current mem=438.5M)
+rc_cBest rc_cWorst
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+Reading tech data from OA library 'list' ...
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+**ERROR: (IMPOAX-503):	Cannot open OA library 'list'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+Type 'man IMPOAX-503' for more detail.
+**ERROR: **ERROR: (IMPSYT-16006):	Fail to read LEF information from OA reference libraries. Check the OA database provided and your inputs.
+
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_oa_ref_lib {D_CELLS_JIHD IO_CELLS_F3V}
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:50:06, mem=445.1M)
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+The existing analysis_view 'av_wc' has been replaced with new attributes.
+The existing analysis_view 'av_bc' has been replaced with new attributes.
+The existing analysis_view 'av_ecsm' has been replaced with new attributes.
+INFO: New setup and hold views overwrite old settings during design initialization
+% End Load MMMC data ... (date=07/15 11:50:06, total cpu=0:00:00.0, real=0:00:00.0, peak res=445.1M, current mem=445.1M)
+rc_cBest rc_cWorst
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+Reading tech data from OA library 'D_CELLS_JIHD' ...
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+**ERROR: (IMPOAX-503):	Cannot open OA library 'D_CELLS_JIHD'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+Type 'man IMPOAX-503' for more detail.
+**ERROR: **ERROR: (IMPSYT-16006):	Fail to read LEF information from OA reference libraries. Check the OA database provided and your inputs.
+
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_oa_ref_lib {D_CELLS_JIHD IO_CELLS_F3V}
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:52:05, mem=448.3M)
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+The existing analysis_view 'av_wc' has been replaced with new attributes.
+The existing analysis_view 'av_bc' has been replaced with new attributes.
+The existing analysis_view 'av_ecsm' has been replaced with new attributes.
+INFO: New setup and hold views overwrite old settings during design initialization
+% End Load MMMC data ... (date=07/15 11:52:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=448.3M, current mem=448.3M)
+rc_cBest rc_cWorst
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+Reading tech data from OA library 'D_CELLS_JIHD' ...
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+**ERROR: (IMPOAX-503):	Cannot open OA library 'D_CELLS_JIHD'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+Type 'man IMPOAX-503' for more detail.
+**ERROR: **ERROR: (IMPSYT-16006):	Fail to read LEF information from OA reference libraries. Check the OA database provided and your inputs.
+
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_oa_ref_lib IO_CELLS_F3V
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:52:32, mem=448.4M)
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+The existing analysis_view 'av_wc' has been replaced with new attributes.
+The existing analysis_view 'av_bc' has been replaced with new attributes.
+The existing analysis_view 'av_ecsm' has been replaced with new attributes.
+INFO: New setup and hold views overwrite old settings during design initialization
+% End Load MMMC data ... (date=07/15 11:52:32, total cpu=0:00:00.0, real=0:00:00.0, peak res=448.4M, current mem=448.4M)
+rc_cBest rc_cWorst
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+Reading tech data from OA library 'IO_CELLS_F3V' ...
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+**ERROR: (IMPOAX-503):	Cannot open OA library 'IO_CELLS_F3V'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+Type 'man IMPOAX-503' for more detail.
+**ERROR: **ERROR: (IMPSYT-16006):	Fail to read LEF information from OA reference libraries. Check the OA database provided and your inputs.
+
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_oa_ref_lib {D_CELLS_JIHD IO_CELLS_F3V XSPRAMLP_128X16P}
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:53:55, mem=448.9M)
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+The existing analysis_view 'av_wc' has been replaced with new attributes.
+The existing analysis_view 'av_bc' has been replaced with new attributes.
+The existing analysis_view 'av_ecsm' has been replaced with new attributes.
+INFO: New setup and hold views overwrite old settings during design initialization
+% End Load MMMC data ... (date=07/15 11:53:55, total cpu=0:00:00.0, real=0:00:00.0, peak res=448.9M, current mem=448.9M)
+rc_cBest rc_cWorst
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+Reading tech data from OA library 'D_CELLS_JIHD' ...
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+**ERROR: (IMPOAX-503):	Cannot open OA library 'D_CELLS_JIHD'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+Type 'man IMPOAX-503' for more detail.
+**ERROR: **ERROR: (IMPSYT-16006):	Fail to read LEF information from OA reference libraries. Check the OA database provided and your inputs.
+
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_oa_ref_lib {D_CELLS_JIHD IO_CELLS_F3V XSPRAMLP_128X16P}
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 12:07:05, mem=449.0M)
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+Extraction setup Started 
+The existing analysis_view 'av_wc' has been replaced with new attributes.
+The existing analysis_view 'av_bc' has been replaced with new attributes.
+The existing analysis_view 'av_ecsm' has been replaced with new attributes.
+INFO: New setup and hold views overwrite old settings during design initialization
+% End Load MMMC data ... (date=07/15 12:07:05, total cpu=0:00:00.0, real=0:00:00.0, peak res=449.0M, current mem=449.0M)
+rc_cBest rc_cWorst
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+Reading tech data from OA library 'D_CELLS_JIHD' ...
+**WARN: (IMPOAX-791):	Error reading library definition file - No default library definition file found.
+**ERROR: (IMPOAX-503):	Cannot open OA library 'D_CELLS_JIHD'. Make sure the library exists on disk and its entry is present correctly in the library definition file.
+Type 'man IMPOAX-503' for more detail.
+**ERROR: **ERROR: (IMPSYT-16006):	Fail to read LEF information from OA reference libraries. Check the OA database provided and your inputs.
+
+<CMD> save_global Default.globals0
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Wed Jul 15 12:08:23 2020
+  Total CPU time:     0:01:51
+  Total real time:    0:21:42
+  Peak memory (main): 449.50MB
+
+
+*** Memory Usage v#1 (Current mem = 589.035M, initial mem = 251.484M) ***
+*** Message Summary: 14 warning(s), 26 error(s)
+
+--- Ending "Innovus" (totcpu=0:01:49, real=0:21:40, mem=589.0M) ---

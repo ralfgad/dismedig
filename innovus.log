@@ -1,0 +1,139 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2018 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v18.10-p002_1, built Tue May 29 19:19:55 PDT 2018
+Options:	
+Date:		Wed Jul 15 10:46:36 2020
+Host:		VMCENTOS7 (x86_64 w/Linux 3.10.0-1127.10.1.el7.x86_64) (1core*4cpus*Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz 20480KB)
+OS:		CentOS Linux release 7.8.2003 (Core)
+
+License:
+		invs	Innovus Implementation System	18.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+<CMD> set init_gnd_net GND
+<CMD> set init_design_netlisttype OA
+<CMD> set init_design_settop 0
+<CMD> set init_abstract_view abstract
+<CMD> set init_verilog ../../genus/results/PS_Demo.v
+<CMD> set init_mmmc_file tcl/PS_Demo_mmmc.tcl
+<CMD> set init_layout_view layout
+<CMD> set init_io_file PS_Demo.io
+<CMD> set init_oa_design_lib PS_Demo
+<CMD> set init_oa_ref_lib {D_CELLS_JIHD IO_CELLS_F·V}
+<CMD> set init_oa_design_cell PS_Demo
+<CMD> set init_pwr_net {VDD VDDOR vdd_A vdd_R]}
+<CMD> init_design
+#% Begin Load MMMC data ... (date=07/15 10:58:13, mem=442.4M)
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/IO_CELLS_F3V_LPMOS_slow_1_62V_3_00V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/D_CELLS_JIHD_LPMOS_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/XSPRAMLP_128X16P_CPF_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../celticDB/IO_CELLS_F3V/IO_CELLS_F3V_LPMOS_slow_1_62V_3_00V_125C.cdB' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../celticDB/D_CELLS_JIHD/D_CELLS_JIHD_LPMOS_slow_1_62V_125C.cdB' for library set
+<CMD> set init_gnd_net GND
+<CMD> set init_design_netlisttype OA
+<CMD> set init_design_settop 0
+<CMD> set init_abstract_view abstract
+<CMD> set init_verilog ../../genus/results/PS_Demo.v
+<CMD> set init_mmmc_file tcl/PS_Demo_mmmc.tcl
+<CMD> set init_layout_view layout
+<CMD> set init_io_file PS_Demo.io
+<CMD> set init_oa_design_lib PS_Demo
+<CMD> set init_oa_ref_lib {D_CELLS_JIHD IO_CELLS_F3V}
+<CMD> set init_oa_design_cell PS_Demo
+<CMD> set init_pwr_net {VDD VDDOR vdd_A vdd_R}
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 10:58:58, mem=442.6M)
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/IO_CELLS_F3V_LPMOS_slow_1_62V_3_00V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/D_CELLS_JIHD_LPMOS_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/XSPRAMLP_128X16P_CPF_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../celticDB/IO_CELLS_F3V/IO_CELLS_F3V_LPMOS_slow_1_62V_3_00V_125C.cdB' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../celticDB/D_CELLS_JIHD/D_CELLS_JIHD_LPMOS_slow_1_62V_125C.cdB' for library set
+<CMD> set init_gnd_net GND
+<CMD> set init_design_netlisttype OA
+<CMD> set init_design_settop 0
+<CMD> set init_abstract_view abstract
+<CMD> set init_verilog ../../genus/results/PS_Demo.v
+<CMD> set init_mmmc_file tcl/PS_Demo_mmmc.tcl
+<CMD> set init_layout_view layout
+<CMD> set init_io_file PS_Demo.io
+<CMD> set init_oa_design_lib PS_Demo
+<CMD> set init_oa_ref_lib {list D_CELLS_JIHD IO_CELLS_F3V}
+<CMD> set init_oa_design_cell PS_Demo
+<CMD> set init_pwr_net {VDD VDDOR vdd_A vdd_R}
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:00:36, mem=444.4M)
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/IO_CELLS_F3V_LPMOS_slow_1_62V_3_00V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/D_CELLS_JIHD_LPMOS_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/XSPRAMLP_128X16P_CPF_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../celticDB/IO_CELLS_F3V/IO_CELLS_F3V_LPMOS_slow_1_62V_3_00V_125C.cdB' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../celticDB/D_CELLS_JIHD/D_CELLS_JIHD_LPMOS_slow_1_62V_125C.cdB' for library set
+<CMD> set init_mmmc_file ../../tcl/PS_Demo_mmmc.tcl
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:03:50, mem=445.9M)
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/IO_CELLS_F3V_LPMOS_slow_1_62V_3_00V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/D_CELLS_JIHD_LPMOS_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/XSPRAMLP_128X16P_CPF_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../celticDB/IO_CELLS_F3V/IO_CELLS_F3V_LPMOS_slow_1_62V_3_00V_125C.cdB' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../celticDB/D_CELLS_JIHD/D_CELLS_JIHD_LPMOS_slow_1_62V_125C.cdB' for library set
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:08:35, mem=446.2M)
+<CMD> save_global prueba_innovus_fase0
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:09:32, mem=447.5M)
+<CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+<CMD> set defHierChar /
+<CMD> set distributed_client_message_echo 1
+<CMD> set distributed_mmmc_disable_reports_auto_redirection 0
+<CMD> set enc_enable_print_mode_command_reset_options 1
+<CMD> set init_abstract_view abstract
+<CMD> set init_design_netlisttype OA
+<CMD> set init_design_settop 0
+<CMD> set init_gnd_net GND
+<CMD> set init_io_file PS_Demo.io
+<CMD> set init_layout_view layout
+<CMD> set init_mmmc_file tcl/PS_Demo_mmmc.tcl
+<CMD> set init_oa_design_cell PS_Demo
+<CMD> set init_oa_design_lib PS_Demo
+<CMD> set init_oa_ref_lib {list D_CELLS_JIHD IO_CELLS_F3V}
+<CMD> set init_oa_search_lib {}
+<CMD> set init_original_verilog_files ../../genus/results/PS_Demo.v
+<CMD> set init_pwr_net {VDD VDDOR vdd_A vdd_R}
+<CMD> set init_verilog ../../genus/results/PS_Demo.v
+<CMD> set latch_time_borrow_mode max_borrow
+<CMD> set pegDefaultResScaleFactor 1
+<CMD> set pegDetailResScaleFactor 1
+<CMD> set report_inactive_arcs_format {from to when arc_type sense reason}
+<CMD> set soft_stack_size_limit 31
+**WARN: (IMPUDM-33):	Global variable "timing_enable_default_delay_arc" is obsolete and will be removed in a future release. The obsolete variable still works in this release, but to avoid this warning and to ensure compatibility with future releases, remove the obsolete variable from your script.
+<CMD> suppressMessage -silent GLOBAL-100
+<CMD> unsuppressMessage -silent GLOBAL-100
+**WARN: (IMPUDM-33):	Global variable "timing_enable_default_delay_arc" is obsolete and will be removed in a future release. The obsolete variable still works in this release, but to avoid this warning and to ensure compatibility with future releases, remove the obsolete variable from your script.
+<CMD> suppressMessage -silent GLOBAL-100
+<CMD> unsuppressMessage -silent GLOBAL-100
+<CMD> set timing_enable_default_delay_arc 1
+<CMD> set upf_hier_pg_port_support 0
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:10:21, mem=448.1M)
+<CMD> set init_design_netlisttype Verilog
+<CMD> init_design
+% Begin Load MMMC data ... (date=07/15 11:10:33, mem=448.1M)
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Wed Jul 15 11:15:03 2020
+  Total CPU time:     0:02:13
+  Total real time:    0:28:31
+  Peak memory (main): 448.16MB
+
+
+*** Memory Usage v#1 (Current mem = 591.301M, initial mem = 259.484M) ***
+*** Message Summary: 2 warning(s), 20 error(s)
+
+--- Ending "Innovus" (totcpu=0:02:12, real=0:28:27, mem=591.3M) ---

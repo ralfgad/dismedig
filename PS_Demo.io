@@ -64,7 +64,7 @@
         (inst name = P42 offset = 1015 orientation = R270 place_status = fixed )
         (inst name = P41 offset = 1100 orientation = R270 place_status = fixed )
         (inst name = P40 offset = 1185 orientation = R270 place_status = fixed )
-    )
+
     (bottomleft 
         (inst name = C00 orientation = R0 place_status = fixed )
     )
