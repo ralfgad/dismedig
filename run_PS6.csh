@@ -23,7 +23,7 @@ set work_dir = $PWD
 cd ${work_dir}/../../innovus
 rm -rf static* dynamic* qrc* signal_em cellIDMap work voltus* *PSim* *vector_profile* TWFBinDir *power*
 
-innovus -wait 180 -init ../tcl/PS_Demo_PSim.tcl
+innovus -wait 180 -init ../src/dismedig/tcl/PS_Demo_PSim0.tcl
 mv innovus.cmd innovus_PSim.cmd
 mv innovus.log innovus_PSim.log
 mv innovus.logv innovus_PSim.logv

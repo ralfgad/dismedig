@@ -4,13 +4,14 @@ parameter WIDTH  = 8 ;
 parameter DEPTH  = 32 ;
 
 supply0       GND;
-supply1       VDD, VDDOR, vdd_A, vdd_R;
+supply1       VDD, VDDOR, vdd_A;
+//rgadea supply1 vdd_R;
 PS_Demo fifo_duv(
 .GND(GND), 
 .VDD(VDD), 
 .VDDOR(VDDOR), 
 .vdd_A(vdd_A), 
-.vdd_R(vdd_R),
+// .vdd_R(vdd_R),
 .scan_enable(1'b0), 
 .scan_in(1'b0), 
 .scan_out(), 

@@ -22,7 +22,7 @@ verify_drc -report verifyDrc.rpt
 verifyProcessAntenna -report verifyProcessAnt.rpt
 
 # ----------------------------------------------------------
-# Cleanup, tambien comentado por no tener RAM
+# Cleanup, gadea tambien comentado por no tener RAM
 # ----------------------------------------------------------
 # deleteHaloFromBlock core/RAM
 

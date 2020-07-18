@@ -1,7 +1,8 @@
 // Power simulation demo design
 
 module PS_Demo (rst_n, clk, write,read,data_in,data_out,use_dw,full_n,empty_n,scan_in,scan_out,scan_enable,test_mode,
-                 GND, VDD, VDDOR, vdd_A, vdd_R );
+                 GND, VDD, VDDOR, vdd_A);
+                 // , vdd_R );
 
     input           rst_n, clk, write,read;
 
@@ -16,7 +17,7 @@ module PS_Demo (rst_n, clk, write,read,data_in,data_out,use_dw,full_n,empty_n,sc
     output      scan_out; 
 //
     
-    inout           GND, VDD, VDDOR, vdd_A, vdd_R;
+    inout           GND, VDD, VDDOR, vdd_A;//, vdd_R;
 
     wire            i_rst_n, i_control, i_clk, i_write, i_read;
         
@@ -109,8 +110,8 @@ module PS_Demo (rst_n, clk, write,read,data_in,data_out,use_dw,full_n,empty_n,sc
     VDDORPADF    P36 ( .GNDO(GND), .GNDR(GND), .VDD(VDD), .VDDOR(VDDOR) );
 
     GNDORPADF    P41 ( .GNDOR(GND), .VDD(VDD), .VDDO(VDDOR), .VDDR(VDDOR) );
-    VDDIPADF     P42 ( .GNDO(GND), .GNDR(GND), .VDD(VDD), .VDDI(vdd_R), 
-                       .VDDO(VDDOR), .VDDR(VDDOR) );
+    // VDDIPADF     P42 ( .GNDO(GND), .GNDR(GND), .VDD(VDD), .VDDI(vdd_R), 
+    //                   .VDDO(VDDOR), .VDDR(VDDOR) );
     VDDCPADF     P43 ( .GNDO(GND), .GNDR(GND), .VDD(VDD), .VDDC(vdd_A), 
                        .VDDO(VDDOR), .VDDR(VDDOR) );
     GNDORPADF    P44 ( .GNDOR(GND), .VDD(VDD), .VDDO(VDDOR), .VDDR(VDDOR) );

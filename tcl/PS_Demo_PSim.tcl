@@ -4,7 +4,7 @@
 set libName "PS_Demo"
 set cellName "PS_Demo"
 set ictEmModels "../pdk/xh018/cadence/v7_1/QRC_pvs/v7_1_1/XH018_1151/QRC-Max/xx018_EM.ict.100000h"
-set postLayoutVcd "../xcelium/wave_tb_PS_Demo_postlayout.vcd.gz"
+set postLayoutVcd "../xcelium/fifo.vcd.gz"
 restoreDesign -cellview [list $libName $cellName layout_06_signoff]
 
 # ----------------------------------------------------------
@@ -13,7 +13,10 @@ restoreDesign -cellview [list $libName $cellName layout_06_signoff]
 set_analysis_view -setup {av_wc} -hold {av_wc}
 
 set_interactive_constraint_modes [all_constraint_modes -active]
-set_load -pin_load 250 [get_ports {res_da*} -filter {port_direction == inout}]
+set_load -pin_load 250 [get_ports {data_out*} -filter {port_direction == out}]
+set_load -pin_load 250 [get_ports {use_dw*} -filter {port_direction == out}]
+set_load -pin_load 250 [get_ports {full_n} -filter {port_direction == out}]
+set_load -pin_load 250 [get_ports {empty_n} -filter {port_direction == out}]
 set_load -pin_load 250 [get_ports {scan_out} -filter {port_direction == out}]
 
 # ----------------------------------------------------------
@@ -35,7 +38,7 @@ verifyACLimit -em_temperature 125 \
 # Verify rms limits on signal wire with a toogle rate from VCD 
 # ----------------------------------------------------------
 read_activity_file -reset
-read_activity_file -format VCD -scope tb_PS_Demo.PS_Demo \
+read_activity_file -format VCD -scope fifo_tb.duv.fifo_duv \
                    -block {} $postLayoutVcd -set_net_freq true
 propagate_activity -set_net_freq true
 
@@ -50,7 +53,7 @@ verifyACLimit -em_temperature 125 \
 # Identify VCD windows with maximum activity
 # ----------------------------------------------------------
 read_activity_file -reset
-read_activity_file -format VCD -scope tb_PS_Demo.PS_Demo \
+read_activity_file -format VCD -scope fifo_tb.duv.fifo_duv \
                    -block {} $postLayoutVcd
 report_vector_profile -step 45 -activity -outfile ./PS_Demo_vector_profile.txt
 
@@ -69,7 +72,7 @@ set_power_output_dir ./static_power_vcd_av_wc
 
 set_default_switching_activity -reset
 read_activity_file -reset
-read_activity_file -format VCD -scope tb_PS_Demo.PS_Demo -start {54000} \
+read_activity_file -format VCD -scope fifo_tb.duv.fifo_duv -start {54000} \
     -end {57000} -block {} $postLayoutVcd
 
 report_power
@@ -97,7 +100,7 @@ set_rail_analysis_mode -method static \
     -process_techgen_em_rules true \
     -save_voltage_waveforms false \
     -temperature 125 \
-    -use_em_view_list ../src/PS_Demo_EM_celllist.txt
+    -use_em_view_list ../src/dismedig/PS_Demo_EM_celllist.txt
 
 set_pg_nets -net GND   -voltage 0    -threshold 0.1
 set_pg_nets -net VDD   -voltage 1.62 -threshold 1.53
@@ -111,19 +114,19 @@ set_rail_analysis_domain \
         -gndnets {GND}
 
 set_power_pads -reset
-set_power_pads -net GND   -format xy -file ../src/PS_Demo_GND.pp
-set_power_pads -net VDD   -format xy -file ../src/PS_Demo_VDD.pp
-set_power_pads -net VDDOR -format xy -file ../src/PS_Demo_VDDOR.pp
-set_power_pads -net vdd_A -format xy -file ../src/PS_Demo_vdd_A.pp
-set_power_pads -net vdd_R -format xy -file ../src/PS_Demo_vdd_R.pp
+set_power_pads -net GND   -format xy -file ../src/dismedig/PS_Demo_GND.pp
+set_power_pads -net VDD   -format xy -file ../src/dismedig/PS_Demo_VDD.pp
+set_power_pads -net VDDOR -format xy -file ../src/dismedig/PS_Demo_VDDOR.pp
+set_power_pads -net vdd_A -format xy -file ../src/dismedig/PS_Demo_vdd_A.pp
+set_power_pads -net vdd_R -format xy -file ../src/dismedig/PS_Demo_vdd_R.pp
 
 set_power_data -reset
 set_power_data -format current [ list \
     ./static_power_vcd_av_wc/static_GND.ptiavg \
     ./static_power_vcd_av_wc/static_VDD.ptiavg \
     ./static_power_vcd_av_wc/static_VDDOR.ptiavg \
-    ./static_power_vcd_av_wc/static_vdd_A.ptiavg \
-    ./static_power_vcd_av_wc/static_vdd_R.ptiavg ]
+    ./static_power_vcd_av_wc/static_vdd_A.ptiavg ]
+  #  ./static_power_vcd_av_wc/static_vdd_R.ptiavg ]
 
 analyze_rail -results_directory ./static_rail_vcd_av_wc -type domain coreDomain
 
@@ -192,14 +195,14 @@ set_power_output_dir ./dynamic_power_vcd_av_ecsm
 
 set_default_switching_activity -reset
 read_activity_file -reset
-read_activity_file -format VCD -scope tb_PS_Demo.PS_Demo -start {54050} \
+read_activity_file -format VCD -scope fifo_tb.duv_fifo_duv -start {54050} \
     -end {54095} -block {} $postLayoutVcd
 
 set_power -reset
 set_dynamic_power_simulation -reset
 set_dynamic_power_simulation -resolution 50ps
 
-set_power_include_file ../src/pm.inc
+set_power_include_file ../src/dismedig/pm.inc
 
 report_power -outfile dynamic_power_vcd_av_ecsm.rpt -pg_net all -view av_ecsm -sort { total }
 
@@ -227,7 +230,7 @@ set_rail_analysis_mode -method dynamic \
     -process_techgen_em_rules true \
     -save_voltage_waveforms true \
     -temperature 125 \
-    -use_em_view_list ../src/PS_Demo_EM_celllist.txt
+    -use_em_view_list ../src/dismedig/PS_Demo_EM_celllist.txt
 
 set_pg_nets -net GND   -voltage 0    -threshold 0.1
 set_pg_nets -net VDD   -voltage 1.62 -threshold 1.53
@@ -241,11 +244,11 @@ set_rail_analysis_domain \
         -gndnets {GND}
 
 set_power_pads -reset
-set_power_pads -net GND   -format xy -file ../src/PS_Demo_GND.pp
-set_power_pads -net VDD   -format xy -file ../src/PS_Demo_VDD.pp
-set_power_pads -net VDDOR -format xy -file ../src/PS_Demo_VDDOR.pp
-set_power_pads -net vdd_A -format xy -file ../src/PS_Demo_vdd_A.pp
-set_power_pads -net vdd_R -format xy -file ../src/PS_Demo_vdd_R.pp
+set_power_pads -net GND   -format xy -file ../src/dismedig/PS_Demo_GND.pp
+set_power_pads -net VDD   -format xy -file ../src/dismedig/PS_Demo_VDD.pp
+set_power_pads -net VDDOR -format xy -file ../src/dismedig/PS_Demo_VDDOR.pp
+set_power_pads -net vdd_A -format xy -file ../src/dismedig/PS_Demo_vdd_A.pp
+set_power_pads -net vdd_R -format xy -file ../src/dismedig/PS_Demo_vdd_R.pp
 
 set_power_data -reset
 set_power_data -format current [ list \

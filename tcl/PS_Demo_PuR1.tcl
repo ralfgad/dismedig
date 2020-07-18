@@ -7,15 +7,15 @@
 floorPlan -siteOnly core_jihd \
           -b   0.00   0.00 1430.00 1430.00 \
              160.00 160.00 1270.00 1270.00 \
-             220.50 220.21 1209.46 1210.29 \
-          -noSnapToGrid
+             220.50 220.21 1209.46 1210.29 
+
 
 loadIoFile $ioFile
 
 addIoFiller -cell FILLER100F FILLER84F FILLER50F FILLER40F FILLER20F FILLER10F FILLER05F FILLER02F FILLER01F -prefix IOFILLER
 
 # ----------------------------------------------------------
-# Placement of IPs, comentado porque no hay ram ahora
+# Placement of IPs, gadea comentado porque no hay ram ahora
 # ----------------------------------------------------------
 # create_relative_floorplan -place core/RAM \
 #                          -ref_type core_boundary \
@@ -34,9 +34,9 @@ clearGlobalNets
 globalNetConnect vdd_A -type pgpin -pin vddi -inst * -module {} -verbose
 globalNetConnect GND   -type pgpin -pin gndi -inst * -module {} -verbose
 
-# RAM
-globalNetConnect vdd_R -type pgpin -pin VDD18M -singleInstance core/RAM -verbose
-globalNetConnect GND   -type pgpin -pin VSSM   -singleInstance core/RAM -verbose
+# RAM gadea 
+# globalNetConnect vdd_R -type pgpin -pin VDD18M -singleInstance core/RAM -verbose
+# globalNetConnect GND   -type pgpin -pin VSSM   -singleInstance core/RAM -verbose
 
 # IO fillers / CORNERESDF / VDDPADF / ISF / BT24F / BBCUD24F
 globalNetConnect VDD   -type pgpin -pin VDD   -inst * -module {} -verbose -override
@@ -51,8 +51,8 @@ globalNetConnect VDDOR -type pgpin -pin VDDOR -inst * -module {} -verbose -overr
 # VDDCPADF
 globalNetConnect vdd_A -type pgpin -pin VDDC  -inst * -module {} -verbose -override
 
-# VDDIPADF
-globalNetConnect vdd_R -type pgpin -pin VDDI  -singleInstance P42 -verbose -override
+# VDDIPADF gadea
+# globalNetConnect vdd_R -type pgpin -pin VDDI  -singleInstance P42 -verbose -override
 
 # GNDORPADF
 globalNetConnect GND   -type pgpin -pin GNDOR -inst * -module {} -verbose -override

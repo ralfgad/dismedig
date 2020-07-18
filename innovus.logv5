@@ -1,0 +1,128 @@
+[07/17 09:27:30      0s] 
+[07/17 09:27:30      0s] Cadence Innovus(TM) Implementation System.
+[07/17 09:27:30      0s] Copyright 2018 Cadence Design Systems, Inc. All rights reserved worldwide.
+[07/17 09:27:30      0s] 
+[07/17 09:27:30      0s] Version:	v18.10-p002_1, built Tue May 29 19:19:55 PDT 2018
+[07/17 09:27:30      0s] Options:	
+[07/17 09:27:30      0s] Date:		Fri Jul 17 09:27:30 2020
+[07/17 09:27:30      0s] Host:		VMCENTOS7 (x86_64 w/Linux 3.10.0-1127.10.1.el7.x86_64) (1core*4cpus*Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz 20480KB)
+[07/17 09:27:30      0s] OS:		CentOS Linux release 7.8.2003 (Core)
+[07/17 09:27:30      0s] 
+[07/17 09:27:30      0s] License:
+[07/17 09:27:30      0s] 		invs	Innovus Implementation System	18.1	checkout succeeded
+[07/17 09:27:30      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[07/17 09:27:46     15s] @(#)CDS: Innovus v18.10-p002_1 (64bit) 05/29/2018 19:19 (Linux 2.6.18-194.el5)
+[07/17 09:27:46     15s] @(#)CDS: NanoRoute 18.10-p002_1 NR180522-1057/18_10-UB (database version 2.30, 418.7.1) {superthreading v1.46}
+[07/17 09:27:46     15s] @(#)CDS: AAE 18.10-p004 (64bit) 05/29/2018 (Linux 2.6.18-194.el5)
+[07/17 09:27:46     15s] @(#)CDS: CTE 18.10-p003_1 () May 15 2018 10:23:07 ( )
+[07/17 09:27:46     15s] @(#)CDS: SYNTECH 18.10-a012_1 () Apr 19 2018 01:27:21 ( )
+[07/17 09:27:46     15s] @(#)CDS: CPE v18.10-p005
+[07/17 09:27:46     15s] @(#)CDS: IQRC/TQRC 18.1.1-s118 (64bit) Fri Mar 23 17:23:45 PDT 2018 (Linux 2.6.18-194.el5)
+[07/17 09:27:46     15s] @(#)CDS: OA 22.50-p083 Tue Jan  2 17:02:41 2018
+[07/17 09:27:46     15s] @(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+[07/17 09:27:46     15s] @(#)CDS: RCDB 11.13
+[07/17 09:27:46     15s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_23201_VMCENTOS7_dismedig_UubXXS.
+
+[07/17 09:27:46     15s] Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+[07/17 09:27:46     16s] 
+[07/17 09:27:46     16s] **INFO:  MMMC transition support version v31-84 
+[07/17 09:27:46     16s] 
+[07/17 09:27:46     16s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[07/17 09:27:46     16s] <CMD> suppressMessage ENCEXT-2799
+[07/17 09:27:48     16s] <CMD> win
+[07/17 09:28:08     17s] <CMD> restoreDesign -cellview {PS_Demo PS_Demo layout_06_signoff}
+[07/17 09:28:08     17s] 
+[07/17 09:33:27     76s] <CMD> encMessage warning 0
+[07/17 09:33:27     76s] Suppress "**WARN ..." messages.
+[07/17 09:33:27     76s] <CMD> encMessage debug 0
+[07/17 09:33:27     76s] <CMD> encMessage info 0
+[07/17 09:33:27     76s] **ERROR: (IMPSYT-6300):	Failed to execute command 'source'. For more details, refer to error message: invalid command name "gE#À€À€À€À€À€À€À€À€À€À€À€À€ÂªÀ€À€À€@À€À€À€À€À€À€À€À€À€À€*À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€%À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€"
+[07/17 09:33:57     87s] <CMD> encMessage warning 0
+[07/17 09:33:57     87s] Suppress "**WARN ..." messages.
+[07/17 09:33:57     87s] <CMD> encMessage debug 0
+[07/17 09:33:57     87s] <CMD> encMessage info 0
+[07/17 09:42:35    139s] <CMD> set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+[07/17 09:42:35    139s] <CMD> set defHierChar /
+[07/17 09:42:35    139s] <CMD> set distributed_client_message_echo 1
+[07/17 09:42:35    139s] <CMD> set distributed_mmmc_disable_reports_auto_redirection 0
+[07/17 09:42:35    139s] <CMD> set enc_enable_print_mode_command_reset_options 1
+[07/17 09:42:35    139s] <CMD> set init_abstract_view abstract
+[07/17 09:42:35    139s] <CMD> set init_design_settop 0
+[07/17 09:42:35    139s] <CMD> set init_gnd_net GND
+[07/17 09:42:35    139s] <CMD> set init_io_file PS_Demo.io
+[07/17 09:42:35    139s] <CMD> set init_layout_view layout
+[07/17 09:42:35    139s] <CMD> set init_mmmc_file tcl/PS_Demo_mmmc.tcl
+[07/17 09:42:35    139s] <CMD> set init_oa_design_cell PS_Demo
+[07/17 09:42:35    139s] <CMD> set init_oa_design_lib PS_Demo
+[07/17 09:42:35    139s] <CMD> set init_oa_ref_lib {D_CELLS_JIHD IO_CELLS_F3V XSPRAMLP_128X16P}
+[07/17 09:42:35    139s] <CMD> set init_oa_search_lib {}
+[07/17 09:42:35    139s] <CMD> set init_original_verilog_files ../../genus/results/PS_Demo.v
+[07/17 09:42:35    139s] <CMD> set init_pwr_net {VDD VDDOR vdd_A vdd_R}
+[07/17 09:42:35    139s] <CMD> set init_verilog ../../genus/results/PS_Demo.v
+[07/17 09:42:35    139s] <CMD> set latch_time_borrow_mode max_borrow
+[07/17 09:42:35    139s] <CMD> set pegDefaultResScaleFactor 1
+[07/17 09:42:35    139s] <CMD> set pegDetailResScaleFactor 1
+[07/17 09:42:35    139s] <CMD> set report_inactive_arcs_format {from to when arc_type sense reason}
+[07/17 09:42:35    139s] <CMD> set soft_stack_size_limit 31
+[07/17 09:42:35    139s] **WARN: (IMPUDM-33):	Global variable "timing_enable_default_delay_arc" is obsolete and will be removed in a future release. The obsolete variable still works in this release, but to avoid this warning and to ensure compatibility with future releases, remove the obsolete variable from your script.
+[07/17 09:42:35    139s] <CMD> suppressMessage -silent GLOBAL-100
+[07/17 09:42:35    139s] <CMD> unsuppressMessage -silent GLOBAL-100
+[07/17 09:42:35    139s] **WARN: (IMPUDM-33):	Global variable "timing_enable_default_delay_arc" is obsolete and will be removed in a future release. The obsolete variable still works in this release, but to avoid this warning and to ensure compatibility with future releases, remove the obsolete variable from your script.
+[07/17 09:42:35    139s] <CMD> suppressMessage -silent GLOBAL-100
+[07/17 09:42:35    139s] <CMD> unsuppressMessage -silent GLOBAL-100
+[07/17 09:42:35    139s] <CMD> set timing_enable_default_delay_arc 1
+[07/17 09:42:35    139s] <CMD> set upf_hier_pg_port_support 0
+[07/17 09:42:35    139s] <CMD> set upf_hier_pg_port_support 0
+[07/17 09:45:39    147s] **ERROR: Library name is missing.
+[07/17 09:45:57    148s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib - *WARNING* '/home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib', Line 1: Cannot find file '../virtuoso/cds.lib'.
+[07/17 09:45:57    148s] .
+[07/17 09:45:57    148s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib - *WARNING* '/home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib', Line 1: Skipping: '../virtuoso/cds.lib'.
+[07/17 09:45:57    148s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib - 
+[07/17 09:45:57    148s] .
+[07/17 09:45:57    148s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib - *WARNING* '/home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib', Line 1: Cannot find file '../virtuoso/cds.lib'.
+[07/17 09:45:57    148s] .
+[07/17 09:45:57    148s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib - *WARNING* '/home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib', Line 1: Skipping: '../virtuoso/cds.lib'.
+[07/17 09:45:57    148s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib - 
+[07/17 09:45:57    148s] .
+[07/17 09:46:00    148s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib - *WARNING* '/home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib', Line 1: Cannot find file '../virtuoso/cds.lib'.
+[07/17 09:46:00    148s] .
+[07/17 09:46:00    148s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib - *WARNING* '/home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib', Line 1: Skipping: '../virtuoso/cds.lib'.
+[07/17 09:46:00    148s] **WARN: (IMPOAX-793):	Problem in processing library definition file /home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/cds.lib - 
+[07/17 09:46:00    148s] .
+[07/17 09:46:53    150s] <CMD> restoreDesign -cellview {PS_Demo PS_Demo layout_06_signoff}
+[07/17 09:46:53    150s] #% Begin load design ... (date=07/17 09:46:53, mem=475.6M)
+[07/17 09:46:53    151s] Set Default Input Pin Transition as 0.1 ps.
+[07/17 09:46:53    151s] % Begin Load MMMC data ... (date=07/17 09:46:53, mem=559.0M)
+[07/17 09:46:53    151s] **ERROR: (TCLCMD-995):	Can not open file '../liberty/IO_CELLS_F3V_LPMOS_ecsm_power_slow_1_62V_3_00V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/D_CELLS_JIHD_LPMOS_ecsm_power_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/XSPRAMLP_128X16P_CPF_slow_1_62V_125C.lib.gz' for library set
+
+[07/17 09:46:53    151s] 
+[07/17 09:46:53    151s] ERROR: 
+[07/17 09:46:53    151s] 
+[07/17 09:46:53    151s] 
+[07/17 09:46:53    151s]     while executing
+[07/17 09:46:53    151s] "error $catchMsg"
+[07/17 09:46:53    151s]     (procedure "restoreDesign" line 29)
+[07/17 09:46:53    151s] 
+[07/17 09:47:01    154s] **ERROR: Restore from OA database failed. Please check the logfile.
+[07/17 09:47:43    156s] **INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...
+[07/17 09:47:46    156s] 
+--------------------------------------------------------------------------------
+Exiting Innovus on Fri Jul 17 09:47:46 2020
+  Total CPU time:     0:02:37
+  Total real time:    0:20:17
+  Peak memory (main): 559.05MB
+
+[07/17 09:47:46    156s] 
+[07/17 09:47:46    156s] *** Memory Usage v#1 (Current mem = 650.742M, initial mem = 259.484M) ***
+[07/17 09:47:46    156s] 
+[07/17 09:47:46    156s] *** Summary of all messages that are not suppressed in this session:
+[07/17 09:47:46    156s] Severity  ID               Count  Summary                                  
+[07/17 09:47:46    156s] ERROR     IMPSYT-6300          2  Failed to execute command '%s'. For more...
+[07/17 09:47:46    156s] WARNING   IMPOAX-793           9  Problem in processing library definition...
+[07/17 09:47:46    156s] WARNING   IMPUDM-33            2  Global variable "%s" is obsolete and wil...
+[07/17 09:47:46    156s] ERROR     TCLCMD-995           3  Can not open file '%s' for %s            
+[07/17 09:47:46    156s] *** Message Summary: 11 warning(s), 5 error(s)
+[07/17 09:47:46    156s] 
+[07/17 09:47:46    156s] --- Ending "Innovus" (totcpu=0:02:37, real=0:20:16, mem=650.7M) ---

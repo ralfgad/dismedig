@@ -3,23 +3,25 @@
 # ----------------------------------------------------------
 set libName "PS_Demo"
 set cellName "PS_Demo"
-set refLibs [list D_CELLS_JIHD IO_CELLS_F3V XSPRAMLP_128X16P]
+set refLibs [list D_CELLS_JIHD IO_CELLS_F3V ]
+# gadea he borrado el core de la RAM
 set verilogFile "../genus/results/${cellName}.v"
 set scanDef "../genus/results/${cellName}.scan.def"
-set ioFile "../src/dismedig/${cellName}.save.io"
+set ioFile "../src/dismedig/${cellName}.save2.io"
 set mmmcFile "../tcl/${cellName}_mmmc.tcl"
-set powerNets [list VDD VDDOR vdd_A vdd_R]
+set powerNets [list VDD VDDOR vdd_A ]
+#gadea he borrado vdd_R
 set groundNets [list GND]
 
 # ----------------------------------------------------------
 # Definition of Innovus variables
 # ----------------------------------------------------------
-setOaxMode -compressLevel 0
-setOaxMode -allowBitConnection true
-setOaxMode -allowTechUpdate false
-setOaxMode -updateMode true
-#setGenerateViaMode -auto true
-setOaxMode -pinPurpose true
+ setOaxMode -compressLevel 0
+ setOaxMode -allowBitConnection true
+ setOaxMode -allowTechUpdate false
+ setOaxMode -updateMode true
+# setGenerateViaMode -auto true
+ setOaxMode -pinPurpose true
 setDesignMode -process 180
 setViaGenMode -symmetrical_via_only true
 
@@ -37,7 +39,7 @@ set init_oa_design_lib      $libName
 set init_top_cell   	    $cellName
 set init_oa_ref_lib 	    $refLibs
 set init_verilog    	    $verilogFile
-set init_io_file    	    $ioFile
+# set init_io_file    	    $ioFile
 set init_mmmc_file  	    $mmmcFile
 set init_pwr_net    	    $powerNets
 set init_gnd_net    	    $groundNets
