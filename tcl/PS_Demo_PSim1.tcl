@@ -1,38 +1,4 @@
-# ----------------------------------------------------------
-# Custom variables, load design
-# ----------------------------------------------------------
-set libName "PS_Demo"
-set cellName "PS_Demo"
-set ictEmModels "../pdk/xh018/cadence/v7_1/QRC_pvs/v7_1_1/XH018_1151/QRC-Max/xx018_EM.ict.100000h"
-set postLayoutVcd "../xcelium/fifo.vcd.gz"
-restoreDesign -cellview [list $libName $cellName layout_06_signoff]
 
-# ----------------------------------------------------------
-# Switch analysis views and apply load
-# ----------------------------------------------------------
-set_analysis_view -setup {av_wc} -hold {av_wc}
-
-set_interactive_constraint_modes [all_constraint_modes -active]
-set_load -pin_load 250 [get_ports {data_out*} -filter {port_direction == out}]
-set_load -pin_load 250 [get_ports {use_dw*} -filter {port_direction == out}]
-set_load -pin_load 250 [get_ports {full_n} -filter {port_direction == out}]
-set_load -pin_load 250 [get_ports {empty_n} -filter {port_direction == out}]
-set_load -pin_load 250 [get_ports {scan_out} -filter {port_direction == out}]
-
-# ----------------------------------------------------------
-# Verify rms limits on signal wire with a toogle rate of 0.8
-# ----------------------------------------------------------
-setDelayCalMode -engine aae
-verifyACLimitSetFreq -toggle 0.8
-propagate_activity -set_net_freq true
-mkdir signal_em
-
-verifyACLimit -em_temperature 125 \
-              -ict_em_models $ictEmModels \
-              -method rms \
-              -report ./signal_em/em_sig_125C.txt \
-              -report_db \
-              -use_db_freq
 
 # ----------------------------------------------------------
 # Verify rms limits on signal wire with a toogle rate from VCD 
@@ -72,8 +38,8 @@ set_power_output_dir ./static_power_vcd_av_wc
 
 set_default_switching_activity -reset
 read_activity_file -reset
-read_activity_file -format VCD -scope fifo_tb.duv.fifo_duv -start {54000} \
-    -end {57000} -block {} $postLayoutVcd
+read_activity_file -format VCD -scope fifo_tb.duv.fifo_duv -start {2050} \
+    -end {2110} -block {} $postLayoutVcd
 
 report_power
 report_power -outfile static_power_vcd_av_wc.rpt -pg_net all -view av_wc -sort { total }
@@ -131,3 +97,44 @@ set_power_data -format current [ list \
 analyze_rail -results_directory ./static_rail_vcd_av_wc -type domain coreDomain
 
 
+# GND
+# --------
+read_power_rail_results -rail_directory ./static_rail_vcd_av_wc/coreDomain_125C_avg_1/GND \
+                        -power_db ./static_power_vcd_av_wc/power.db
+
+report_power_rail_results -plot ir -filename ./static_rail_vcd_av_wc/ir_GND.rpt -limit 50
+report_power_rail_results -plot rj -filename ./static_rail_vcd_av_wc/rj_GND.rpt -limit 50
+
+# VDD
+# --------
+read_power_rail_results -rail_directory ./static_rail_vcd_av_wc/coreDomain_125C_avg_1/VDD \
+                        -power_db ./static_power_vcd_av_wc/power.db
+			
+report_power_rail_results -plot ir -filename ./static_rail_vcd_av_wc/ir_VDD.rpt -limit 50
+report_power_rail_results -plot rj -filename ./static_rail_vcd_av_wc/rj_VDD.rpt -limit 50
+
+# VDDOR
+# --------
+read_power_rail_results -rail_directory ./static_rail_vcd_av_wc/coreDomain_125C_avg_1/VDDOR \
+                        -power_db ./static_power_vcd_av_wc/power.db
+
+report_power_rail_results -plot ir -filename ./static_rail_vcd_av_wc/ir_VDDOR.rpt -limit 50
+report_power_rail_results -plot rj -filename ./static_rail_vcd_av_wc/rj_VDDOR.rpt -limit 50
+
+# vdd_A
+# --------
+read_power_rail_results -rail_directory ./static_rail_vcd_av_wc/coreDomain_125C_avg_1/vdd_A \
+                        -power_db ./static_power_vcd_av_wc/power.db
+
+report_power_rail_results -plot ir -filename ./static_rail_vcd_av_wc/ir_vdd_A.rpt -limit 50
+report_power_rail_results -plot rj -filename ./static_rail_vcd_av_wc/rj_vdd_A.rpt -limit 50
+
+# vdd_R
+# --------
+# read_power_rail_results -rail_directory ./static_rail_vcd_av_wc/coreDomain_125C_avg_1/vdd_R \
+#                        -power_db ./static_power_vcd_av_wc/power.db
+
+#report_power_rail_results -plot ir -filename ./static_rail_vcd_av_wc/ir_vdd_R.rpt -limit 50
+# report_power_rail_results -plot rj -filename ./static_rail_vcd_av_wc/rj_vdd_R.rpt -limit 50
+
+source ../src/dismedig/tcl/PS_Demo_PSim2.tcl

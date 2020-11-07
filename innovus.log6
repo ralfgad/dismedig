@@ -1,0 +1,49 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2018 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v18.10-p002_1, built Tue May 29 19:19:55 PDT 2018
+Options:	
+Date:		Sun Jul 19 11:30:44 2020
+Host:		VMCENTOS7 (x86_64 w/Linux 3.10.0-1127.10.1.el7.x86_64) (1core*4cpus*Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz 20480KB)
+OS:		CentOS Linux release 7.8.2003 (Core)
+
+License:
+		invs	Innovus Implementation System	18.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (31 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> win
+<CMD> restoreDesign -cellview {PS_Demo PS_Demo layout_06_signoff}
+#% Begin load design ... (date=07/19 11:31:25, mem=441.8M)
+Set Default Input Pin Transition as 0.1 ps.
+% Begin Load MMMC data ... (date=07/19 11:31:26, mem=493.9M)
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/IO_CELLS_F3V_LPMOS_ecsm_power_slow_1_62V_3_00V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/D_CELLS_JIHD_LPMOS_ecsm_power_slow_1_62V_125C.lib.gz' for library set
+**ERROR: (TCLCMD-995):	Can not open file '../liberty/XSPRAMLP_128X16P_CPF_slow_1_62V_125C.lib.gz' for library set
+
+
+ERROR: 
+
+
+    while executing
+"error $catchMsg"
+    (procedure "restoreDesign" line 29)
+
+**ERROR: Restore from OA database failed. Please check the logfile.
+
+--------------------------------------------------------------------------------
+Exiting Innovus on Sun Jul 19 11:31:56 2020
+  Total CPU time:     0:00:20
+  Total real time:    0:01:13
+  Peak memory (main): 494.09MB
+
+
+*** Memory Usage v#1 (Current mem = 620.855M, initial mem = 251.484M) ***
+*** Message Summary: 0 warning(s), 3 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:19.1, real=0:01:12, mem=620.9M) ---

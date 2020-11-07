@@ -3,7 +3,7 @@
 # ----------------------------------------------------------
 # Special route
 # ----------------------------------------------------------
-source ../tcl/${cellName}_SRoute.tcl
+source ../src/dismedig/tcl/${cellName}_SRoute.tcl
 #quitado de momento para la memoria
 sroute -connect { blockPin padPin } -layerChangeRange { MET1 METTP } \
     -blockPinTarget { nearestTarget } -padPinPortConnect { allPort allGeom } \
