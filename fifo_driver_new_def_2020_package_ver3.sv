@@ -1,6 +1,6 @@
 
 
-
+package prueba;
 class fifo_RCSG;
   rand bit[7:0] data;
   rand bit ena_w;
@@ -428,8 +428,8 @@ begin
           6: genPush_rand();
           endcase
       join_any
-          $display("la fifo tiene  %d palabras", driver.sb.size);
-      $display("Instance coverage is %e", driver.COV_entradas.get_coverage());
+          $display("la fifo tiene  %d palabras", sb.size);
+      $display("Instance coverage is %e", COV_entradas.get_coverage());
       disable fork;
     end join
       fork //corner case
@@ -683,3 +683,4 @@ begin
   
 endclass
 
+endpackage

@@ -1,17 +1,17 @@
 `timescale 1 ns/ 1 ps
 //`include "fifo_ports_2013_ver1.sv"
- //import FIFO_ELEMENTS::*;
+//import prueba::*;
 
 
 program fifo_top_test (fifo_if.test test_ports, fifo_if.monitor monitor_ports);
 //  `include "fifo_RCSG_2014_ver1.sv"
 //  `include "fifo_sb_queue_2014_ver2.sv"
- `include "fifo_driver_new_def_2020_ver2.sv"
+// `include "fifo_driver_new_def_2020_ver2.sv"
 
 
 
 
-   fifo_driver driver;
+   prueba::fifo_driver driver;
 
 
 
