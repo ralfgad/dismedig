@@ -20,7 +20,7 @@ set work_dir = $PWD
 
 # Power and Rail simulation
 # -------------------------
-cd ${work_dir}/../../innovus
+cd ${work_dir}/../../innovus 
 rm -rf static* dynamic* qrc* signal_em cellIDMap work voltus* *PSim* *vector_profile* TWFBinDir *power*
 
 innovus -wait 180 -init ../src/dismedig/tcl/PS_Demo_PSim0.tcl

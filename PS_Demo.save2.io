@@ -13,8 +13,14 @@
 (iopad
     (topright
 	(inst name="C11"	)
+    )
+    (topleft 
 	(inst name="C10"	)
+    )
+    (bottomright 
 	(inst name="C01"	)
+    )
+    (bottomleft 
 	(inst name="C00"	)
     )
     (top

@@ -39,7 +39,7 @@ set init_oa_design_lib      $libName
 set init_top_cell   	    $cellName
 set init_oa_ref_lib 	    $refLibs
 set init_verilog    	    $verilogFile
-# set init_io_file    	    $ioFile
+set init_io_file    	    $ioFile
 set init_mmmc_file  	    $mmmcFile
 set init_pwr_net    	    $powerNets
 set init_gnd_net    	    $groundNets

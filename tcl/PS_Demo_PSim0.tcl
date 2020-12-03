@@ -34,6 +34,6 @@ verifyACLimit -em_temperature 125 \
               -report_db \
               -use_db_freq
 
-
+source ../src/dismedig/tcl/PS_Demo_PSim1.tcl
 
 
