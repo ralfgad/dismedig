@@ -1,27 +1,34 @@
 
 
 
-
-
 class fifo_RCSG;
   rand bit[7:0] data;
+  rand bit ena_w;
+  rand bit ena_r;
   rand integer wr_cmds;
-  rand integer rd_cmds;
-  constraint data_acotado {data>8'h33 && data<8'hee;}
+  rand integer rd_cmds; 
+  constraint data_acotado {data>8'd43 && data<8'd57;}
+  constraint llenando {{ena_w,ena_r} dist { 2'b00:=10, 2'b11:=10 , 2'b01:=20 , 2'b10:=40};}
+  constraint vaciando {{ena_w,ena_r} dist { 2'b00:=10, 2'b11:=10 , 2'b10:=20 , 2'b01:=40};}
+  constraint no_simultaneidad {{ena_w,ena_r} !=2'b11;}
+  constraint no_solo_escribo {{ena_w,ena_r} !=2'b10;}
+  constraint no_solo_leo {{ena_w,ena_r} !=2'b01;}  
   
+/*
   function void pre_randomize();
     $display("Before randomize dato=%h", data);
   endfunction
   function void post_randomize();
     $display("After randomize dato=%h",data);
   endfunction
+*/
 endclass
 
 
 
 class fifo_sb;
   // mailbox fifo = new();
-   bit [7:0]  fifo_queue [$:31]; //si ponemos  tamanyo 32 los procedimientos del 2013 fallan
+   bit [7:0]  fifo_queue [$:32]; //si ponemos  tamanyo 32 los procedimientos del 2013 fallan
    integer size;
    virtual fifo_if.monitor mports2;
 
@@ -50,9 +57,12 @@ class fifo_sb;
    begin
     fork
       begin
-          wait (fifo_queue.size()<32);
+          wait (fifo_queue.size()<=32);
           fifo_queue.push_back(data);
           size=fifo_queue.size();
+          //fifo_queue<= {fifo_queue,data};
+          //size ++;
+
       end
               @ (mports2.px)  #0        $write("%dns : ERROR : Over flow detected, current occupancy %d\n", $time, fifo_queue.size());
     
@@ -62,18 +72,21 @@ class fifo_sb;
    endtask
    
 
-   task compareItem (bit [7:0] data);
+   task  compareItem (bit [7:0] data);
    begin
-     bit [7:0] cdata  = 0;
+       bit  [7:0] cdata  = 0;
      fork
       begin
         wait (fifo_queue.size()>0)
         cdata=fifo_queue.pop_front;
         size=fifo_queue.size();
+        //cdata =fifo_queue[0];        
+        //fifo_queue<= fifo_queue[1:$];
+        //size --;        
         a_check0: assert (data == cdata) else
           $error("%dns : ERROR : Data mismatch, Expected %x Got %x\n",$time, cdata, data );
       end
-     #0      $write("%dns : ERROR : Under flow detected,current occupancy %d\n", $time, fifo_queue.size()); //esta rrama del no deberï¿½a saltar nunca
+     #0      $write("%dns : ERROR : Under flow detected,current occupancy %d\n", $time, fifo_queue.size()); //esta rrama del no debería saltar nunca
     join_any
     disable fork;     
    end
@@ -115,11 +128,14 @@ class fifo_driver;
   bit rdDone;
   bit wrDone;
 
-  localparam antirecover=5; 
   integer wr_cmds;
   integer rd_cmds;
   covergroup COV_entradas;
-      coverpoint mports.px.data_in;
+      coverpoint mports.px.data_in
+            {
+        bins bin1      = {[44:56]};
+        bins others[]  = default;
+      }
       ae:coverpoint {mports.px.lleno,mports.px.wr_en,mports.px.rd_en}
       {
             bins f1w1r0={3'b110};
@@ -130,7 +146,11 @@ class fifo_driver;
   endgroup;
    covergroup COV_salidas;
 
-      coverpoint  mports.px.data_out;
+      coverpoint  mports.px.data_out
+            {
+        bins bin1      = {[44:56]};
+        bins others[]  = default;
+      }
       as:coverpoint {mports.px.vacio,mports.px.wr_en,mports.px.rd_en}
       {
             bins e1w0r1={3'b101};
@@ -196,7 +216,8 @@ class fifo_driver;
       CROSS2: cross CP1,CP2
       {
         bins   corners = binsof(CP1.situaciones_extremas) && binsof(CP2.leo_escribo);     
-        bins   otros = binsof(CP1.situaciones_normales) && binsof(CP2.leo_escribo);        
+        bins   otros_leo = binsof(CP1.situaciones_normales) && binsof(CP2.solo_leo);     
+        bins   otros_escribo = binsof(CP1.situaciones_normales) && binsof(CP2.solo_escribo);     
       }      
   endgroup;  
   
@@ -210,7 +231,7 @@ class fifo_driver;
       
     COV_entradas=new;
     COV_salidas=new;
-    //prueba_interno=new; //no es adecuado por muestrear punteros internos de la implementaciï¿½n. Si cambia el RTL pierde toda su validez
+    //prueba_interno=new; //no es adecuado por muestrear punteros internos de la implementación. Si cambia el RTL pierde toda su validez
     //prueba_puntero=new; //no es adecuado por muestrear elementos internos del scoreborad. Si cambia el modelo de referencia pierde toda su validez  
     COV_combinado=new;
     wr_cmds = 4;
@@ -244,11 +265,11 @@ class fifo_driver;
     bit [7:0] data = 0;
 	  @ (mports.px); 
     while (1) begin
-      //@ (mports.px); //eliminado porque es lectura sï¿½ncrona
+      //@ (mports.px); //eliminado porque es lectura síncrona
       if (  mports.px.rd_en== 1 && mports.px.vacio!=0 ||  mports.px.rd_en== 1 && mports.px.vacio==0 && mports.px.wr_en==1) begin
         COV_salidas.sample(); 
         @ (mports.px) ;
-        data = mports.px.data_out;//aï¿½adido porque es lectura sï¿½ncrona
+        data = mports.px.data_out;//añadido porque es lectura síncrona
 //anyadido para cobertura
         $write("%dns : Read posting to scoreboard data = %x\n",$time, data);
         sb.compareItem(data);
@@ -364,7 +385,7 @@ task llenado_vaciado_random ();
 begin
   wr_cmds=1;
   rd_cmds=1;  
-    while ( COV_entradas.get_coverage()<90 || COV_salidas.get_coverage()<90 || COV_combinado.get_coverage()<100 )    
+    while ( COV_entradas.get_coverage()<90 || COV_salidas.get_coverage()<90 || COV_combinado.get_coverage()<100 || $get_coverage <100 )    
   begin
        while ( sb.size<32) //empiezo a llenar
       fork begin
@@ -419,6 +440,79 @@ begin
  end
  endtask 
  
+ task llenado_vaciado_random_2020 ();
+
+  bit flag;
+  bit corner;
+  int size;
+  int estimulos;
+  wr_cmds=1;
+  rd_cmds=1; 
+  flag=1'b0;
+  corner=1'b1;
+  estimulos=0; 
+  reset();
+  while ( COV_entradas.get_coverage()<90 || COV_salidas.get_coverage()<90 || COV_combinado.get_coverage()<100 || $get_coverage <100  || estimulos<100000)    
+
+  begin
+  
+      if (  flag==0)
+            begin
+             rdatos.vaciando.constraint_mode(0);
+             rdatos.llenando.constraint_mode(1);
+             rdatos.no_simultaneidad.constraint_mode(0);
+             rdatos.no_solo_leo.constraint_mode(corner); 
+             rdatos.no_solo_escribo.constraint_mode(0);  
+              if ( !rdatos.randomize()    )
+                $write("randomization failed in s!");
+              $write("holas %d \n",  size);
+              if (size==1 && rdatos.ena_r==1'b1 &&rdatos.ena_w==1'b0)
+                corner=1'b1;
+              else
+                corner=1'b0; 
+              if (size==0)
+                corner=1'b1; 
+              if (size==31 &&rdatos.ena_r==1'b0 &&rdatos.ena_w==1'b1 ) begin
+                flag=1'b1;
+                corner=1'b1;
+              end
+             end
+          else
+            begin
+             rdatos.vaciando.constraint_mode(1);
+             rdatos.llenando.constraint_mode(0);
+             rdatos.no_simultaneidad.constraint_mode(0);
+             rdatos.no_solo_escribo.constraint_mode(corner); 
+             rdatos.no_solo_leo.constraint_mode(0);  
+              //corner=1'b0;
+              if ( !rdatos.randomize() )
+                $write("randomization failed in b!")  ;
+              $write("holab %d \n",  size);  
+              if (size==31 && rdatos.ena_r==1'b0 && rdatos.ena_w==1'b1)
+                corner=1'b1;
+              else
+                corner=1'b0;  
+              if (size==32)
+                corner=1'b1;
+              if (size==1 && rdatos.ena_r==1'b1 && rdatos.ena_w==1'b0 ) begin
+                flag=1'b0;
+                corner=1'b1;
+              end
+            end
+       if (rdatos.ena_w==1'b1 && rdatos.ena_r==1'b0)       
+              size++;      
+       if (rdatos.ena_w==1'b0 && rdatos.ena_r==1'b1)
+              size--;
+       ports.tx.data_in<=rdatos.data;  
+       ports.tx.rd_en<=rdatos.ena_r; 
+       ports.tx.wr_en<=rdatos.ena_w; 
+       $display("Total coverage %e",$get_coverage());
+       @(ports.tx);
+       estimulos ++;
+    end
+ endtask
+  
+ 
   task reset();
   begin
     repeat (5) @ (ports.tx);
@@ -430,7 +524,6 @@ begin
     wrDone = 0;
     sb.vaciar();
     repeat (5) @ (ports.tx);
-    # antirecover;
     ports.rst= 1'b1;
     $write("%dns : Done asserting reset\n",$time);
   end
