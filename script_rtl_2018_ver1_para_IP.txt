@@ -1,0 +1,16 @@
+ 
+vlog -reportprogress 300 -work work {fifo_top.sv}
+vlog -reportprogress 300 -work work {fifo_tb.sv}
+vsim -L cycloneive_ver -L altera_ver -L altera_mf_ver -coverage -novopt -msgmode both work.fifo_tb
+add wave \
+{sim:/fifo_tb/clk } \
+{sim:/fifo_tb/data_in } \
+{sim:/fifo_tb/data_out } \
+{sim:/fifo_tb/empty } \
+{sim:/fifo_tb/full } \
+{sim:/fifo_tb/rd_cs } \
+{sim:/fifo_tb/rd_en } \
+{sim:/fifo_tb/rst } \
+{sim:/fifo_tb/wr_cs } \
+{sim:/fifo_tb/wr_en } 
+run -all

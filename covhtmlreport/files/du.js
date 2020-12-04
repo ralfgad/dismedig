@@ -1,0 +1,2 @@
+var g_data = {"data":[{"n":"work.fifo_un_fichero","id":6,"zf":1,"tc":96.06,"s":86.20,"b":95.23,"fc":100.00,"t":99.65,"a":99.23},{"n":"work.prueba","id":3,"zf":1,"tc":100.00,"g":100.00,"a":100.00}]};
+processDuData(g_data);

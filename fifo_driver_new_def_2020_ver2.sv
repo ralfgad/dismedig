@@ -86,7 +86,7 @@ class fifo_sb;
         a_check0: assert (data == cdata) else
           $error("%dns : ERROR : Data mismatch, Expected %x Got %x\n",$time, cdata, data );
       end
-     #0      $write("%dns : ERROR : Under flow detected,current occupancy %d\n", $time, fifo_queue.size()); //esta rrama del no debería saltar nunca
+     #0      $write("%dns : ERROR : Under flow detected,current occupancy %d\n", $time, fifo_queue.size()); //esta rrama del no deberï¿½a saltar nunca
     join_any
     disable fork;     
    end
@@ -231,7 +231,7 @@ class fifo_driver;
       
     COV_entradas=new;
     COV_salidas=new;
-    //prueba_interno=new; //no es adecuado por muestrear punteros internos de la implementación. Si cambia el RTL pierde toda su validez
+    //prueba_interno=new; //no es adecuado por muestrear punteros internos de la implementaciï¿½n. Si cambia el RTL pierde toda su validez
     //prueba_puntero=new; //no es adecuado por muestrear elementos internos del scoreborad. Si cambia el modelo de referencia pierde toda su validez  
     COV_combinado=new;
     wr_cmds = 4;
@@ -265,11 +265,11 @@ class fifo_driver;
     bit [7:0] data = 0;
 	  @ (mports.px); 
     while (1) begin
-      //@ (mports.px); //eliminado porque es lectura síncrona
+      //@ (mports.px); //eliminado porque es lectura sï¿½ncrona
       if (  mports.px.rd_en== 1 && mports.px.vacio!=0 ||  mports.px.rd_en== 1 && mports.px.vacio==0 && mports.px.wr_en==1) begin
         COV_salidas.sample(); 
         @ (mports.px) ;
-        data = mports.px.data_out;//añadido porque es lectura síncrona
+        data = mports.px.data_out;//aï¿½adido porque es lectura sï¿½ncrona
 //anyadido para cobertura
         $write("%dns : Read posting to scoreboard data = %x\n",$time, data);
         sb.compareItem(data);
@@ -385,7 +385,7 @@ task llenado_vaciado_random ();
 begin
   wr_cmds=1;
   rd_cmds=1;  
-    while ( COV_entradas.get_coverage()<90 || COV_salidas.get_coverage()<90 || COV_combinado.get_coverage()<100 || $get_coverage <100 )    
+    while ( COV_entradas.get_coverage()<90 || COV_salidas.get_coverage()<90 || COV_combinado.get_coverage()<100  )    
   begin
        while ( sb.size<32) //empiezo a llenar
       fork begin
@@ -452,7 +452,7 @@ begin
   corner=1'b1;
   estimulos=0; 
   reset();
-  while ( COV_entradas.get_coverage()<90 || COV_salidas.get_coverage()<90 || COV_combinado.get_coverage()<100 || $get_coverage <100  || estimulos<100000)    
+  while ( COV_entradas.get_coverage()<90 || COV_salidas.get_coverage()<90 || COV_combinado.get_coverage()<100   || estimulos<100000)    
 
   begin
   

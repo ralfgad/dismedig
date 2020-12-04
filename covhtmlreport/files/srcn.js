@@ -1,0 +1,2 @@
+var g_data = ["","fifo_tb_2020_ver1.sv","fifo_ports_2020_ver1.sv","fifo_driver_new_def_2020_package_ver3.sv","fifo_top_test_2020_package_ver3.sv","fifo_top_duv_2020_package_ver1.sv","fifo_un_fichero.v"];
+processSrcNamesData(g_data);
