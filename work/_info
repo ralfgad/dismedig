@@ -9,179 +9,182 @@ z2
 !i10f 100
 cModel Technology
 Z0 d/home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig
-T_opt
-Z1 !s11d prueba /home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/work 1 fifo_if 1 /home/dismedig/XFAB_Digital_RefKit-cadence-1.1.1/x_all/cadence/XFAB_Digital_RefKit-cadence/v1_1_1_FIFO/src/dismedig/work 
-!s110 1607081838
-V]S4ZegMEFTQfbB03jh]ZS3
-Z2 04 7 4 work fifo_tb fast 0
-=1-00505623001d-5fca1f6e-cb791-5ed6
-Z3 o-quiet -auto_acc_if_foreign -work work
-Z4 tCvgOpt 0
-n@_opt
-Z5 OL;O;2019.4;69
 T_opt1
-R1
-!s110 1607081335
-VboCN3e5heaGeYZL4VTZeY0
-R2
-=1-00505623001d-5fca1d71-afe29-5346
-R3
-R4
+!s11d prueba /home/dismedig/v1_1_1_FIFO/v1_1_1_FIFO/src/dismedig/work 1 fifo_if 1 /home/dismedig/v1_1_1_FIFO/v1_1_1_FIFO/src/dismedig/work 
+!s110 1634298018
+VW;^ja2`<P[GPm9WRAgH5A1
+Z1 04 7 4 work fifo_tb fast 0
+=4-00505623001d-616968a2-31b8-205f
+o-quiet -auto_acc_if_foreign -work work +acc
+Z2 tCvgOpt 0
 n@_opt1
-R5
+Z3 OL;O;2019.4;69
+R0
+T_opt2
+!s11d prueba /home/dismedig/v1_1_1_FIFO/src/dismedig/work 1 fifo_if 1 /home/dismedig/v1_1_1_FIFO/src/dismedig/work 
+!s110 1607676696
+Vodl:f?74:zbHcmaQD>lZP2
+R1
+=1-00505623001d-5fd33318-13f3d-760a
+o-quiet -auto_acc_if_foreign -work work
+R2
+n@_opt2
+R3
 R0
 Yfifo_if
-Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z7 !s110 1607081836
+Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z5 !s110 1635697367
 !i10b 1
 !s100 MH^WE9H3VIFlF=f<j_<dm3
 !s11b X=F>kC<iDIFN181HD@9Go2
-I]TVcUk:``dY8^Q88_A_7g2
-Z8 VDg1SIo80bB@j0V0VzS_@n1
+IL3h=3UlVnMP9kcJbd?_]?0
+Z6 VDg1SIo80bB@j0V0VzS_@n1
 S1
-R0
-w1607020918
+Z7 d/home/dismedig/v1_1_1_FIFO/v1_1_1_FIFO/src/dismedig
+w1607680543
 8fifo_ports_2020_ver1.sv
 Ffifo_ports_2020_ver1.sv
 !i122 -1
 L0 5
-Z9 OL;L;2019.4;69
+Z8 OL;L;2019.4;69
 r1
 !s85 0
 31
-Z10 !s108 1607081836.000000
+Z9 !s108 1635697367.000000
 !s107 fifo_ports_2020_ver1.sv|
-!s90 -sv|-work|work|fifo_ports_2020_ver1.sv|
+!s90 -reportprogress|300|-work|work|fifo_ports_2020_ver1.sv|
 !i113 0
-o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R4
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
 vfifo_tb
-R6
-R7
+R4
+R5
 !i10b 1
 !s100 EchW[[EP6Sa;dUSER_dV<1
 !s11b aJW1fhT]h9<N:O^fR>l`;1
 Iz^3DL6FS_R0bJ7HmiMoEM1
-R8
+R6
 S1
-R0
-w1607081511
+R7
+Z11 w1607680545
 8fifo_tb_2020_ver1.sv
 Ffifo_tb_2020_ver1.sv
 !i122 -1
 L0 2
-R9
+R8
 r1
 !s85 0
 31
-R10
+R9
 !s107 fifo_tb_2020_ver1.sv|
 !s90 -reportprogress|300|-work|work|fifo_tb_2020_ver1.sv|
 !i113 0
-Z11 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R4
+R10
+R2
 vFIFO_top_duv
-R6
-R7
+R4
+R5
 !i10b 1
-!s100 6A`_C;<fX6XnIPcYH@<nT2
-!s11b mH^fPKL4?W>5H>bGlFXcL0
-I2THB>3`7[8L_SF_R8od7B2
-R8
+!s100 6f^>@b@aU?P1HI2`g@FHW2
+!s11b R789>aIn;lM5Ad8CJVe:S0
+IZdOK[L]9]elzTG3dlXV;03
+R6
 S1
-R0
-w1607080120
-8fifo_top_duv_2020_package_ver1.sv
-Ffifo_top_duv_2020_package_ver1.sv
+R7
+w1634298012
+8fifo_top_duv_2020_ver2_questasim.sv
+Ffifo_top_duv_2020_ver2_questasim.sv
 !i122 -1
 L0 1
-R9
+R8
 r1
 !s85 0
 31
-R10
-!s107 fifo_top_duv_2020_package_ver1.sv|
-!s90 -work|work|-vopt|-sv|+define+VERIFICACION|fifo_top_duv_2020_package_ver1.sv|
+R9
+!s107 fifo_top_duv_2020_ver2_questasim.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|+define+VERIFICACION|-cover|sbcet3|fifo_top_duv_2020_ver2_questasim.sv|
 !i113 0
-o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-!s92 -work work -sv +define+VERIFICACION -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R4
+Z12 !s102 -cover sbcet3
+Z13 o-work work -sv -cover sbcet3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z14 !s92 -work work -sv +define+VERIFICACION -cover sbcet3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
 n@f@i@f@o_top_duv
 4fifo_top_test
-R6
+R4
 DXx4 work 6 prueba 0 22 W3X:R`FY[dnUHKAfWWQQ53
-R7
+R5
 !i10b 1
 !s100 7233PM_UfBL8^kSZ1`hjY0
 !s11b 0bX9Nii2LC>Y@Woig:2RZ1
 Ig7jTaZ2cE<z7TW5TG]8_i0
-R8
+R6
 S1
-R0
-w1604145198
+R7
+R11
 8fifo_top_test_2020_package_ver3.sv
 Ffifo_top_test_2020_package_ver3.sv
 !i122 -1
 L0 6
-R9
+R8
 r1
 !s85 0
 31
-R10
+R9
 !s107 fifo_top_test_2020_package_ver3.sv|
 !s90 -reportprogress|300|-work|work|fifo_top_test_2020_package_ver3.sv|
 !i113 0
-R11
-R4
+R10
+R2
 vfifo_un_fichero
-R6
-R7
+R4
+R5
 !i10b 1
 !s100 c4MWz[XA<`[9Sehi?S8Q=3
 !s11b ZV0[hYN^H1??2ZE@P``1N0
-IfY8fzf277f7hK0ZK4Qgm]0
-R8
+IZkAQkiKL9ZYzH9Q20JAXS0
+R6
 S1
-R0
-w1607017866
-8fifo_un_fichero.v
-Ffifo_un_fichero.v
+R7
+w1634297538
+8fifo_un_fichero_questasim.sv
+Ffifo_un_fichero_questasim.sv
 !i122 -1
 L0 13
-R9
+R8
 r1
 !s85 0
 31
-!s108 1607081835.000000
-!s107 fifo_un_fichero.v|
-!s90 -sv|-work|work|-cover|sbcet3|fifo_un_fichero.v|
+R9
+!s107 fifo_un_fichero_questasim.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|+define+VERIFICACION|-cover|sbcet3|fifo_un_fichero_questasim.sv|
 !i113 0
-!s102 -cover sbcet3
-o-sv -work work -cover sbcet3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R4
+R12
+R13
+R14
+R2
 Xprueba
 !s115 fifo_if
-R6
-R7
+R4
+R5
 !i10b 1
 !s100 @edfTlHbfZ`BK0<m8dXcR1
 !s11b T7E]iZFb>n?PefTdcn2ck2
 IW3X:R`FY[dnUHKAfWWQQ53
 VW3X:R`FY[dnUHKAfWWQQ53
 S1
-R0
-w1604144798
+R7
+R11
 8fifo_driver_new_def_2020_package_ver3.sv
 Ffifo_driver_new_def_2020_package_ver3.sv
 !i122 -1
 L0 3
-R9
+R8
 r1
 !s85 0
 31
-R10
+R9
 !s107 fifo_driver_new_def_2020_package_ver3.sv|
 !s90 -reportprogress|300|-work|work|fifo_driver_new_def_2020_package_ver3.sv|
 !i113 0
-R11
-R4
+R10
+R2
